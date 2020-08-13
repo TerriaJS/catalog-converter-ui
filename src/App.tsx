@@ -77,10 +77,7 @@ const Weblink = ({ appState }: CatalogConverterUIProps) => {
   const { weblink, setWeblink, handleSubmitLink } = appState;
   return (
     <Li>
-      <Text subHeading>
-        Provide an input (v7 terriajs JSON catalog) from your local filesystem
-        or a web link
-      </Text>
+      <Text subHeading>Provide a web link to a v7 terriajs JSON catalog</Text>
       <Spacing bottom={2} />
 
       <form onSubmit={handleSubmitLink}>
@@ -135,7 +132,7 @@ const Results = ({ appState }: CatalogConverterUIProps) => {
           </ErrorText>
         </Box>
       )}
-      {v8catalog ? (
+      {v8catalog && v8catalog.result?.catalog !== undefined ? (
         <>
           <Box column fullWidth>
             <SuccessText>
@@ -173,7 +170,9 @@ const Results = ({ appState }: CatalogConverterUIProps) => {
 
           {v8catalog.messages?.length > 0 && (
             <>
-              <ErrorText>Messages from converter</ErrorText>
+              <ErrorText>
+                {v8catalog.messages?.length || 0} messages from converter
+              </ErrorText>
               <Spacing bottom={2} />
               {v8catalog.messages.map((message, index) => (
                 <React.Fragment key={index}>
