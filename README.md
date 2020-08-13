@@ -1,4 +1,16 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# TerriaJS Catalog Converter
+
+https://catalog-converter.terria.io
+
+CD is enabled for the above link on the master branch of this repository.
+
+## Tweaks to create-react-app
+
+craco is pulled in so we can use babel to parse the `terriajs` library as it
+doesn't currently publish to npm with compiled files.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/
+create-react-app).
 
 ## Available Scripts
 
