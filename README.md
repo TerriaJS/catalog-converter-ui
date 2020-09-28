@@ -4,6 +4,12 @@ https://catalog-converter.terria.io
 
 CD is enabled for the above link on the master branch of this repository.
 
+## Updating
+
+Publish new `catalog-converter` to npm & pull it in via the new version
+
+Check it works locally, then PR it to master.
+
 ## Tweaks to create-react-app
 
 craco is pulled in so we can use babel to parse the `terriajs` library as it
