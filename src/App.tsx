@@ -1,11 +1,17 @@
 /// <reference types="styled-components/cssprop" />
 
-import React, { useState, useEffect } from "react";
+import {
+  CatalogResult,
+  foldMessage,
+  getMissingRequiredPropDetails,
+  getUnknownPropDetails,
+  getUnknownTypeDetails,
+} from "catalog-converter";
+import React, { useEffect, useState } from "react";
+import styled, { DefaultTheme, useTheme } from "styled-components/macro";
 import "./App.css";
+import { parseFile, parseWeblink } from "./convertHelpers";
 import Dropzone from "./Dropzone";
-import { CatalogResult } from "catalog-converter";
-import { parseWeblink, parseFile } from "./convertHelpers";
-import styled, { useTheme, DefaultTheme } from "styled-components/macro";
 
 const FileSaver = require("file-saver");
 
@@ -82,14 +88,14 @@ const Weblink = ({ appState }: CatalogConverterUIProps) => {
 
       <form onSubmit={handleSubmitLink}>
         <label>
-          Web link (e.g. try https://map.drought.gov.au/init/drought-map.json)
+          Web link (e.g. try https://map.terria.io/init/terria.json)
           <Input
             css={`
               width: 100%;
               padding: 10px 0;
             `}
             value={weblink}
-            onChange={e => setWeblink(e.target.value)}
+            onChange={(e) => setWeblink(e.target.value)}
           />
         </label>
         <Spacing bottom={2} />
@@ -157,7 +163,7 @@ const Results = ({ appState }: CatalogConverterUIProps) => {
                   const blob = new Blob(
                     [JSON.stringify(v8catalog.result, null, 2)],
                     {
-                      type: "application/json;charset=utf-8"
+                      type: "application/json;charset=utf-8",
                     }
                   );
                   FileSaver.saveAs(blob, "v8-converted-catalog.json");
@@ -186,8 +192,19 @@ const Results = ({ appState }: CatalogConverterUIProps) => {
                     `}
                   >
                     <Text>Message: {message.message}</Text>
-                    <Text>Details: {JSON.stringify(message.details)}</Text>
-                    <Text>Path: {JSON.stringify(message.path)}</Text>
+                    <Text>
+                      Details:{" "}
+                      {JSON.stringify(
+                        foldMessage<any>({
+                          isInputNotPlainObject: (m) => "",
+                          isMissingRequiredProp: (m) =>
+                            getMissingRequiredPropDetails(m),
+                          isUnknownProp: (m) => getUnknownPropDetails(m),
+                          isUnknownType: (m) => getUnknownTypeDetails(m),
+                        })(message)
+                      )}
+                    </Text>
+                    <Text>Path: {message.path.join(" → ")}</Text>
                     <Text>Severity: {message.severity}</Text>
                   </Box>
                   <Spacing bottom={2} />
@@ -247,7 +264,7 @@ function App() {
     setV8catalog,
     handleSubmitLink,
     clearError,
-    resetState
+    resetState,
   };
 
   useEffect(() => {

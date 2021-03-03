@@ -4072,10 +4072,10 @@ caseless@~0.12.0:
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-catalog-converter@0.0.2-alpha.2:
-  version "0.0.2-alpha.2"
-  resolved "https://registry.yarnpkg.com/catalog-converter/-/catalog-converter-0.0.2-alpha.2.tgz#cd1770c902fe9b0ea5029fa130aae85fa0768205"
-  integrity sha512-eRfriZJvW4OUqC+KvcJ4b6tg29WH1Bw74DDTgzA1A+CxehArLsw8A5tywjm+iABeTSENsm6WnKTekKvu++ZlEg==
+catalog-converter@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/catalog-converter/-/catalog-converter-0.0.6.tgz#d00a548c396dfb3e32f26c9a20fd2c08be3ed30e"
+  integrity sha512-ET/jStojfj4vPPueiEWUKec6aIi3UWgEK1xeFQ9gq+4NShBUkLMXBpdOMkF71SV68AkMDsEvZnXJJ6q3FQ3LJg==
   dependencies:
     "@iadvize-oss/foldable-helpers" "^1.0.4"
     "@iadvize-oss/opaque-type" "^1.0.2-beta.5"
@@ -8491,6 +8491,13 @@ json5@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.1.2.tgz#43ef1f0af9835dd624751a6b7fa48874fb2d608e"
   integrity sha512-MoUOQ4WdiN3yxhm7NEVJSJrieAo5hNSLQ5sj05OTRHPL9HOBy8u4Bu88jsC1jvqAdN+E1bJmsUcZH+1HQxliqQ==
+  dependencies:
+    minimist "^1.2.5"
+
+json5@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.0.tgz#2dfefe720c6ba525d9ebd909950f0515316c89a3"
+  integrity sha512-f+8cldu7X/y7RAJurMEJmdoKXGB/X550w2Nr3tTbezL6RwEE/iMcm+tZnXeoZtKuOq6ft8+CqzEkrIgx1fPoQA==
   dependencies:
     minimist "^1.2.5"
 
