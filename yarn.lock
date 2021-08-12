@@ -4072,10 +4072,10 @@ caseless@~0.12.0:
   resolved "https://registry.yarnpkg.com/caseless/-/caseless-0.12.0.tgz#1b681c21ff84033c826543090689420d187151dc"
   integrity sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=
 
-catalog-converter@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/catalog-converter/-/catalog-converter-0.0.6.tgz#d00a548c396dfb3e32f26c9a20fd2c08be3ed30e"
-  integrity sha512-ET/jStojfj4vPPueiEWUKec6aIi3UWgEK1xeFQ9gq+4NShBUkLMXBpdOMkF71SV68AkMDsEvZnXJJ6q3FQ3LJg==
+catalog-converter@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/catalog-converter/-/catalog-converter-0.0.7.tgz#35147c7a2faa369e3b08e61d9e94a7180a7d6dfe"
+  integrity sha512-j0B74g/69TeOTSnM+RMj19toZUYYEFVyoLtRjraD+gk4QJ+i733Iqjn+31n008FAharYfYGIGpv3i1kHS/guWg==
   dependencies:
     "@iadvize-oss/foldable-helpers" "^1.0.4"
     "@iadvize-oss/opaque-type" "^1.0.2-beta.5"
