@@ -4,6 +4,18 @@ https://catalog-converter.terria.io
 
 CD is enabled for the above link on the master branch of this repository.
 
+## Installing
+
+```bash
+yarn install
+```
+
+If the installation fails due to a failing postinstall script, try this instead:
+
+```bash
+yarn install --ignore-scripts
+```
+
 ## Updating
 
 Publish new `catalog-converter` to npm & pull it in via the new version
