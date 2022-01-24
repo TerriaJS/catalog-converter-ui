@@ -149,11 +149,11 @@ const Results = ({ appState }: CatalogConverterUIProps) => {
             <SuccessText>
               Download it & try it out on{" "}
               <a
-                href="http://ci.terria.io/next/"
+                href="http://ci.terria.io/main/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                http://ci.terria.io/next/
+                http://ci.terria.io/main/
               </a>
             </SuccessText>
             <Box paddedVertically={2}>
